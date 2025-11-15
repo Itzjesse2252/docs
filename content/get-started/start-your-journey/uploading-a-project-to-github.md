@@ -90,6 +90,35 @@ As you add, edit or delete files directly in the browser on {% data variables.pr
 
 When making changes, remember that you can create a new branch from the `main` branch of your repository, so that you can experiment without affecting the main copy of files. Then, when you're happy with a set of a changes, open a pull request to merge the changes into your `main` branch. For a reminder of how to do this, see [AUTOTITLE](/get-started/start-your-journey/hello-world).
 
+
+## Uploading a Folder to Github
+You can **add a folder** to a GitHub repo in several ways(web UI or git on your computer). Say you want to upload a folder names images, Here are the quick options:
+
+**1) Using the GitHub web UI (upload an existing folder)**
+* - Go to the repo → Add file → Upload files.
+* - Drag-and-drop the folder (or use the file chooser and select the folder). Modern browsers preserve folder structure.
+*- Commit changes.
+
+**2) Using the GitHub web UI (create a new folder + file)**
+*- Repo → Add file → Create new file.
+*- In the filename box type the path, e.g. images/README.md
+*- Add content, then Commit changes.
+**Note**: Git does not track empty folders. If you need an empty folder, create a placeholder file (e.g. .gitkeep or README.md) inside it.
+
+**3) Using Git locally (recommended if you’re working locally)**
+*- mkdir "images"
+*- add files into that folder (or touch images/.gitkeep to keep it if empty)
+*- git add images
+*- git commit -m "Add images folder"
+*- git push origin main
+
+## Notes
+*- Avoid spaces in folder names; prefer hyphens or underscores.
+*- GitHub won’t store empty folders unless there’s at least one file inside.
+*- If you’re uploading large binary files (images over 100 MB or many large files), consider Git LFS.
+
+
+
 ## Next steps
 
 * Most people want to keep working on their files locally (i.e. on their own computer), and then continually sync these locally-made changes with this "remote" {% ifversion fpt or ghec %}(in the cloud){% endif %} repository on {% data variables.product.github %}. There are plenty of tools that let you do this, such as GitHub Desktop. To get started, you'd need to:
